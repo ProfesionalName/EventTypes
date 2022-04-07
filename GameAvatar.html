@@ -10,13 +10,44 @@
     <div class = "content">
         <h1>Avatar Selector</h1>
         <div class = "row">
-
+            <img src = "https://www.citypng.com/public/uploads/preview/-41601333520cftzuas5rd.png">
+            <button id = "1">ONE</button>
+            <button id = "2">TWO</button>
+            <button id = "3">THREE</button>
+            <button id = "4">FOUR</button>
+            <button id = "5">FIVE</button>
+            <button id = "6">SIX</button>
         </div>
     </div>
 </div>
 <script>
-    const picture = document.querySelector('img')
-    picture.src=`newURL`;
+    const picture = document.querySelector('img');
+
+    const one = document.getElementById('1');
+    const two = document.getElementById('2');
+    const three = document.getElementById('3');
+    const four = document.getElementById('4');
+    const five = document.getElementById('5');
+    const six = document.getElementById('6');
+
+    one.addEventListener('click', function(e){
+        picture.src = "https://www.citypng.com/public/uploads/preview/-41601313914ox6c3d6e4n.png";
+    });
+    two.addEventListener('click', function(e){
+        picture.src = "https://www.citypng.com/public/uploads/preview/-41601316264zmyndxmi21.png";
+    });
+    three.addEventListener('click', function(e){
+        picture.src = "https://www.citypng.com/public/uploads/preview/-41601318596qfyeqk7mvf.png";
+    });
+    four.addEventListener('click', function(e){
+        picture.src = "https://www.citypng.com/public/uploads/preview/-41601315366ahksehn0fu.png";
+    });
+    five.addEventListener('click', function(e){
+        picture.src = "https://www.citypng.com/public/uploads/preview/-41604282427tf4vvdvuvp.png";
+    });
+    six.addEventListener('click', function(e){
+        picture.src = "https://www.citypng.com/public/uploads/preview/-41601317061ysr8g7b8jo.png";
+    });
 </script>
 </body>
 </html>
