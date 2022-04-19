@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel = "stylesheet" href = "style.css">
+    <title>Title</title>
+</head>
+<body>
+<div class = "container">
+    <div class = "content">
+        <h3>What is this?</h3>
+        <h4>I don't want this</h4>
+    </div>
+</div>
+<script>
+    const content = document.querySelector('.content');
+    //Replace contents of an html tag using innerHTML
+    content.innerHTML = '<h1>I love food</h1><h4>Some other message here</h4>';
+
+    //add a new element in addition to existing elements
+    const food = document.createElement('h1');
+    food.innerHTML = 'I love food';
+    content.appendChild(food);
+
+    const water = document.createElement('h1');
+    water.innerHTML = 'I love water';
+    content.appendChild(water);
+
+    const games = document.createElement('h1');
+    games.innerHTML = 'I love games';
+    content.appendChild(games);
+
+    const tv = document.createElement('h1');
+    tv.innerHTML = 'I love tv';
+    content.appendChild(tv);
+
+    const juice = document.createElement('h1');
+    food.innerHTML = 'I love orange juice';
+    content.insertAdjacentElement('afterbegin',juice);
+
+    const snacks = document.createElement('h1');
+    snacks.innerHTML = 'I love chips';
+    content.insertAdjacentElement('beforebegin',snacks);
+</script>
+</body>
+</html>
