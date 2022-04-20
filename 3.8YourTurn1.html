@@ -3,28 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <link rel = "stylesheet" href = "style.css">
-    <title>Change Contents  of an Element Notes</title>
-    <style>
-        .hidden{
-            display:none;
-        }
-    </style>
+    <title>Your Turn 1</title>
 </head>
 <body>
-<div class = "container">
-    <div class = "content">
-        <h1>Change Contents Notes</h1>
+<div class = 'container'>
+    <div class = 'content'>
         <div class = "row">
             <div>
                 <label for = "first">First Name</label>
-                <input type = "text" id = "first" name = "first_name" placeholder = "Jane">
+                <input type = "text" id = "first" name = "first_name" placeholder = "...">
             </div>
             <div>
                 <label for = "last">Last Name</label>
-                <input type = "text" id = "last" name = "last_name" placeholder = "Doe">
+                <input type = "text" id = "last" name = "last_name" placeholder = "...">
             </div>
         </div>
-        <button name = "clear">Clear</button>
+        <button name = "sayHello">Say Hello</button>
         <p class = "hidden"></p>
     </div>
 </div>
@@ -32,7 +26,11 @@
     const firstName = document.getElementById('first');
     const lastName = document.getElementById('last');
     const full = document.querySelector('p');
-    const clearButton = document.querySelector('[name="clear"]');
+    const sayHelloButton = document.querySelector('[name="sayHello"]');
+    const hello = document.createElement('h3');
+
+    content.insertAdjacentElement()
+
 
     function nameCreator(){
         let first = firstName.value;
@@ -43,19 +41,9 @@
         } else{
             full.classList.add("hidden")
         }
-        full.textContent = `Hello ${fullName}!`;
     }
 
-    firstName.addEventListener('change', nameCreator);
 
-    lastName.addEventListener('change', nameCreator);
-
-
-    clearButton.addEventListener('click', function(e){
-        firstName.value = "";
-        lastName.value = "";
-        full.textContent = "";
-    })
 
 </script>
 </body>
