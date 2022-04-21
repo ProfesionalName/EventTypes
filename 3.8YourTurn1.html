@@ -19,18 +19,14 @@
             </div>
         </div>
         <button name = "sayHello">Say Hello</button>
-        <p class = "hidden"></p>
     </div>
+    <p class = "hidden"></p>
 </div>
 <script>
     const firstName = document.getElementById('first');
     const lastName = document.getElementById('last');
     const full = document.querySelector('p');
-    const sayHelloButton = document.querySelector('[name="sayHello"]');
-    const hello = document.createElement('h3');
-
-    content.insertAdjacentElement()
-
+    const sayHelloButton = document.querySelector('[name = "sayHello"]')
 
     function nameCreator(){
         let first = firstName.value;
@@ -41,10 +37,12 @@
         } else{
             full.classList.add("hidden")
         }
+        full.textContent = `Hello ${fullName}!`;
     }
 
+    firstName.addEventListener('change', nameCreator);
 
-
+    lastName.addEventListener('change', nameCreator);
 </script>
 </body>
 </html>
