@@ -14,12 +14,24 @@
                 <input type = "text" id = "items" name = "items" placeholder = "add items">
             </div>
         </div>
-        <button name = "items">Add Items</button>
+        <button name = "items" id = "button">Add Items</button>
+        <p></p>
     </div>
 </div>
 <script>
     const items = document.getElementById('items');
-    const itemsButton = 
+    const itemsButton = document.getElementById('button');
+    const list = document.querySelector('p');
+
+    itemsButton.addEventListener('click', function(e){
+        let itemsList = items.value;
+
+        let fullList = document.createElement('p');
+        fullList.innerHTML = `${itemsList}`;
+        list.insertAdjacentElement('afterbegin', fullList);
+
+        items.value = "";
+    })
 </script>
 </body>
 </html>

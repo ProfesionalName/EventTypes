@@ -18,31 +18,25 @@
                 <input type = "text" id = "last" name = "last_name" placeholder = "...">
             </div>
         </div>
-        <button name = "sayHello">Say Hello</button>
+        <button name = "sayHello" id = "button">Say Hello</button>
+        <p></p>
     </div>
-    <p class = "hidden"></p>
 </div>
 <script>
-    const firstName = document.getElementById('first');
-    const lastName = document.getElementById('last');
+    const first = document.getElementById('first');
+    const last = document.getElementById('last');
+    const sayHelloButton = document.getElementById('button');
     const full = document.querySelector('p');
-    const sayHelloButton = document.querySelector('[name = "sayHello"]')
 
-    function nameCreator(){
-        let first = firstName.value;
-        let last = lastName.value;
-        let fullName = `${first} ${last}`;
-        if (fullName.length>1){
-            full.classList.remove("hidden")
-        } else{
-            full.classList.add("hidden")
-        }
-        full.textContent = `Hello ${fullName}!`;
-    }
-
-    firstName.addEventListener('change', nameCreator);
-
-    lastName.addEventListener('change', nameCreator);
+    sayHelloButton.addEventListener('click', function(e){
+        let firstName = first.value;
+        let lastName = last.value;
+        let message = document.createElement('p');
+        message.innerHTML = `Hello ${firstName} ${lastName}!`;
+        full.insertAdjacentElement('afterbegin', message);
+        first.value = "";
+        last.value = "";
+    })
 </script>
 </body>
 </html>
