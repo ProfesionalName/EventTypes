@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timer Practice</title>
+    <link rel = "stylesheet" href = "style.css">
+    <style>
+        .red{
+            background-color:red;
+        }
+        .green{
+            background-color:green;
+        }
+        .blue{
+            background-color:blue;
+        }
+        .orange{
+            background-color:orange;
+        }
+        .yellow{
+            background-color:yellow;
+        }
+    </style>
+</head>
+<body>
+<div class = 'container'>
+    <div class = 'content'>
+        <div class = "row">
+            <button id = 'remove'>Self Remove</button>
+        </div>
+        <div class = "row">
+            <button id = 'randomColor'>Random Color</button>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    const removeButton = document.getElementById('remove');
+    const randomColorButton = document.getElementById('randomColor');
+    const content = document.querySelector('.content');
+    const colorList = ['red', 'green', 'blue', 'orange', 'yellow'];
+
+    removeButton.addEventListener('click', function(){
+        setTimeout(function(){
+            removeButton.remove()
+        }, 3000)
+    })
+
+    randomColorButton.addEventListener('click', function(){
+        function getColor(){
+            let randomNumber = Math.floor(Math.random()*colorList.length)
+            let color = colorList[randomNumber]
+            return color
+        }
+    })
+</script>
+</html>
