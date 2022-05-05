@@ -28,8 +28,10 @@
         <div class = "row">
             <button id = 'remove'>Self Remove</button>
         </div>
+        <p></p>
         <div class = "row">
             <button id = 'randomColor'>Random Color</button>
+            <button id = "stop">Stop Cycling</button>
         </div>
     </div>
 </div>
@@ -39,6 +41,8 @@
     const randomColorButton = document.getElementById('randomColor');
     const content = document.querySelector('.content');
     const colorList = ['red', 'green', 'blue', 'orange', 'yellow'];
+    let interval;
+    const stopButton = document.getElementById("stop");
 
     removeButton.addEventListener('click', function(){
         setTimeout(function(){
@@ -47,10 +51,28 @@
     })
 
     randomColorButton.addEventListener('click', function(){
-        function getColor(){
-            let randomNumber = Math.floor(Math.random()*colorList.length)
-            let color = colorList[randomNumber]
-            return color
+        if(!interval) {
+            interval = setInterval(function getColor() {
+                removeBGColor()
+                let randomNumber = Math.floor(Math.random() * colorList.length)
+                let color = colorList[randomNumber]
+                content.classList.add(color)
+            }, 1000)
+        }
+    })
+
+    function removeBGColor(){
+        content.classList.remove('red');
+        content.classList.remove('green');
+        content.classList.remove('blue');
+        content.classList.remove('orange');
+        content.classList.remove('yellow');
+    }
+
+    stopButton.addEventListener('click', function(){
+        if(interval){
+            clearInterval(interval);
+            interval = null;
         }
     })
 </script>
