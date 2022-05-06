@@ -1,4 +1,6 @@
 const cardList = document.querySelector('.cardList');
+const score = document.getElementById('score');
+let points = 0;
 
 addCard('test');
 
@@ -16,9 +18,13 @@ cardList.addEventListener('click', function(e){
     if(e.target.classList.contains('active')){
         e.target.classList.remove('active');
         e.target.classList.add('inactive');
+        points++;
+        score.textContent = points;
         return
     }
     e.target.remove();
+    points++;
+    score.textContent = points;
     let children = cardList.children;
     if(children.length < 1){
         clearInterval(interval);
@@ -38,3 +44,4 @@ function buildBoard(){
         addCard('starter');
     }
 }
+
