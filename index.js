@@ -1,5 +1,6 @@
 const cardList = document.querySelector('.cardList');
 const score = document.getElementById('score');
+const removeButton = document.getElementById('remove');
 let points = 0;
 
 addCard('test');
@@ -44,4 +45,10 @@ function buildBoard(){
         addCard('starter');
     }
 }
+
+removeButton.addEventListener('click', function(){
+    setTimeout(function(){
+        document.location.reload();
+    }, 100)
+})
 
